@@ -1,6 +1,6 @@
 {
   "name": "@truong8864/json-rules-engine",
-  "version": "7.3.3",
+  "version": "7.3.4",
   "description": "Rules Engine expressed in simple json",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -58,10 +58,8 @@
       "expect"
     ]
   },
-  "author": "Cache Hamm <cache.hamm@gmail.com>",
-  "contributors": [
-    "Chris Pardy <chris.pardy@gmail.com>"
-  ],
+  "author": "Truong Dinh <ndtruonguit@@gmail.com>",
+  "contributors": [],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/truongnd98/json-rules-engine/issues"
