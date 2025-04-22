@@ -332,7 +332,7 @@ class Engine extends EventEmitter {
     }
 
     for (let index = 0; index < ruleArray.length; index++) {
-      const rule = [index]
+      const rule = ruleArray[index]
       yield rule.evaluate(almanac).then((ruleResult) => {
         debug('engine::run', { ruleResult: ruleResult.result })
         almanac.addResult(ruleResult)
