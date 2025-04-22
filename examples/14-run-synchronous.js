@@ -82,7 +82,6 @@ let facts = {
 }
 
 // Run synchronous the engine to evaluate
-
 async function testRunSync () {
   for await (const result of engine.runSync(facts)) {
     if (result.result) {
