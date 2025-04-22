@@ -8,6 +8,7 @@ let engine = new Engine()
 
 // Add rule 1
 engine.addRule({
+  name: 'rule1',
   conditions: {
     any: [{
       all: [{
@@ -41,6 +42,7 @@ engine.addRule({
 
 // Add rule 2
 engine.addRule({
+  name: 'rule2',
   conditions: {
     any: [{
       all: [{
@@ -90,7 +92,7 @@ async function testRunSync () {
       console.log('FAILURE', result)
     }
 
-    break; // Closes iterator, triggers return
+    // break; // Closes iterator, triggers return
   }
 }
 testRunSync()
