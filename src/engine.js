@@ -382,7 +382,7 @@ class Engine extends EventEmitter {
     const orderedSets = this.prioritizeRules()
 
     for (let index = 0; index < orderedSets.length; index++) {
-      const set = [index]
+      const set = orderedSets[index]
       yield * this.syncEvaluateRules(set, almanac)
     }
 
