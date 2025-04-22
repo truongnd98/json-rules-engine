@@ -1,6 +1,6 @@
 {
   "name": "@truong8864/json-rules-engine",
-  "version": "7.3.3",
+  "version": "7.3.4",
   "description": "Rules Engine expressed in simple json",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -13,8 +13,8 @@
     "lint": "standard --verbose --env mocha | snazzy || true",
     "lint:fix": "standard --fix --env mocha",
     "prepublishOnly": "npm run build",
-    "build": "babel --stage 1 -d dist/ src/",
-    "watch": "babel --watch --stage 1 -d dist/ src",
+    "build": "babel src --out-dir dist",
+    "watch": "babel src --out-dir dist --watch",
     "examples": "./test/support/example_runner.sh"
   },
   "repository": {
@@ -27,7 +27,7 @@
     "rules engine"
   ],
   "standard": {
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "ignore": [
       "/dist",
       "/examples/node_modules"
@@ -47,8 +47,9 @@
   },
   "mocha": {
     "require": [
-      "babel-core/register",
-      "babel-polyfill"
+      "@babel/register",
+      "core-js",
+      "regenerator-runtime/runtime"
     ],
     "file": "./test/support/bootstrap.js",
     "checkLeaks": true,
@@ -57,24 +58,20 @@
       "expect"
     ]
   },
-  "author": "Cache Hamm <cache.hamm@gmail.com>",
-  "contributors": [
-    "Chris Pardy <chris.pardy@gmail.com>"
-  ],
+  "author": "Truong Dinh <ndtruonguit@@gmail.com>",
+  "contributors": [],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/truongnd98/json-rules-engine/issues"
   },
   "homepage": "https://github.com/truongnd98/json-rules-engine",
   "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-core": "6.26.3",
-    "babel-eslint": "10.1.0",
-    "babel-loader": "8.2.2",
-    "babel-polyfill": "6.26.0",
-    "babel-preset-es2015": "~6.24.1",
-    "babel-preset-stage-0": "~6.24.1",
-    "babel-register": "6.26.0",
+    "@babel/cli": "^7.27.0",
+    "@babel/core": "^7.26.10",
+    "@babel/eslint-parser": "^7.27.0",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/register": "^7.25.9",
+    "babel-loader": "^10.0.0",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
     "colors": "~1.4.0",
@@ -90,8 +87,10 @@
   },
   "dependencies": {
     "clone": "^2.1.2",
+    "core-js": "^3.41.0",
     "eventemitter2": "^6.4.4",
     "hash-it": "^6.0.0",
-    "jsonpath-plus": "^10.3.0"
+    "jsonpath-plus": "^10.3.0",
+    "regenerator-runtime": "^0.14.1"
   }
 }
