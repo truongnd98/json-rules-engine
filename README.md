@@ -10,6 +10,8 @@
 
 ```json-rules-engine``` Currently, rules are run in parallel. I would like a feature that allows the rules to run synchronously.
 
+##
+
 A rules engine expressed in JSON
 
 * [Synopsis](#synopsis)
